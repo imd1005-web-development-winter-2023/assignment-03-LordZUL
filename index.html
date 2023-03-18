@@ -52,20 +52,19 @@
         <div class="content">
           <div class="close-btn" onclick="togglePopup()">X</div>
           <h1>Today's Bounty</h1>
-          <form class="add-pokemon">
-            <label for="pokemon-name">Todo List:</label>
-            <input
-              type="text"
-              name="item"
-              id="pokemon-name"
-              placeholder="Pikachu"
-              required
-            />
-            <input type="submit" value="Add Pokemon" />
+          <form class="add-todoList">
+            <!--<label for="task-name">Todo List:</label>-->
+            <textarea name="item" id="task-name" placeholder ="Post new bounty" required></textarea>
+            <input type="submit" value="Add New" />
           </form>
     
-          <ul class="poke-items">
-            <li>Loading pokemons...</li>
+          <ul class="todoLists">
+            <li class="list">
+              <input type="checkbox">
+              <span class="task">Loading pokemons...</span>
+              <i class="ri-delete-bin-5-line"></i>
+            </li>
+            <!--<li>Loading pokemons...</li>-->
           </ul>
         </div>
       </div>
