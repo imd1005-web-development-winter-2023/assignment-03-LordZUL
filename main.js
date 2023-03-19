@@ -8,37 +8,50 @@
 //
 
 // Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+
+const inputField = document.querySelector("#task-name");
+const todoList = document.querySelector(".todoLists");
+const todoListForm = document.querySelector(".add-todoList");
+const pendingNum = document.querySelector(".pending-num");
+const clearButton = document.querySelector(".clear-button");
+
+//console.log(inputField,todoList,todoListForm,pendingNum,clearButton);
+
+//register that enter key will enter data
+inputField.addEventListener("keyup",(e) =>{
+  let inputVal = inputField.value.trim(); //removes white space 
+
+  if (e.key === "Enter" && inputVal.length > 0) {
+    let liTag = `<li class="list">
+          <input type="checkbox">
+          <span class="task">${inputVal}</span>
+          <i class="ri-delete-bin-5-line"></i>
+        </li>`;
+   todoList.insertAdjacentHTML("beforeend", liTag);
+    console.log("Valid");
+
+  }
+})
+
 
 // Variables
 
 // DOM Elements
-let appContainer = document.getElementById(appID);
 
 //
 // Functions
 //
 
 // Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
+
 
   // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
-}
 
 //
 // Inits & Event Listeners
 //
 
-inititialise();
+
+
+
+

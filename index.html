@@ -54,22 +54,20 @@
           <h1>Today's Bounty</h1>
           <form class="add-todoList">
             <!--<label for="task-name">Todo List:</label>-->
-            <textarea name="item" id="task-name" placeholder ="Post new bounty" required></textarea>
+            <textarea name="item" id="task-name" placeholder ="Post Bounty" required></textarea>
             <input type="submit" value="Add New" />
           </form>
     
           <ul class="todoLists">
-            <li class="list">
-              <input type="checkbox">
-              <span class="task">Loading pokemons...</span>
-              <i class="ri-delete-bin-5-line"></i>
-            </li>
             <!--<li>Loading pokemons...</li>-->
           </ul>
+          <div class="pending-message">
+            <p>You have <span class="pending-num">no tasks</span> pending.</p>
+            <button class="clear-button">Clear All</button>
+          </div>
+          
         </div>
       </div>
-
-      <script src="./javascript.js"></script>
       <!--<div id="app"></div>-->
     </main>
 

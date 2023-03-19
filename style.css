@@ -82,6 +82,7 @@ body {
   .content{
     
     max-width: 80%;
+    width: 100%;
     height: 80vh;
     margin: 85px auto 0;
     padding: 25px;
@@ -90,14 +91,14 @@ body {
     position: relative;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
-  .content.add-todoList{
+  .content .add-todoList{
     position: relative;
     height: 64px;
     width: 100%;
   }
   .add-todoList{
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 5fr 1fr;
     gap: 0.5rem;
     margin-bottom: 30px;}
   
@@ -108,7 +109,7 @@ body {
       font-size: 18px;
       font-weight: 400;
       border-radius: 8px;
-      padding: 12px 45px 12px 15px;
+      padding: 18px 45px 18px 15px;
       border: 1px solid #F9DBBB;
       resize: none;
       }
@@ -141,7 +142,7 @@ body {
     }
   
     main h1 {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       font-size: 2rem;
       font-family:'Carnivalee Freakshow', sans-serif;
       color: #F9DBBB;
@@ -165,6 +166,8 @@ body {
       padding: 20px 15px;
       border-radius: 8px;
       position: relative;
+      cursor: pointer;
+      margin-bottom: 15px;
     }
     .todoLists .list i{
       position: absolute;
@@ -174,6 +177,52 @@ body {
       font-size: 20px;
       color: #003049;
       padding: 5px;
+      opacity: 0.6;
+      display: none;
+    }
+    .todoLists .list i:hover{
+      opacity: 1;
+    }
+    /*When you hover on the list, the i will act...*/
+    .todoLists .list:hover i{
+      display: inline-flex;
+    }
+    /* What the-- turns out you need to put space before indicating children??? WHEN*/
+    .todoLists .list input{
+      height: 16px;
+      min-width: 16px;
+      accent-color: #003049;
+      /*Pointer -events none basically makes the check box none*/
+    }
+
+    .list input:checked ~ .task {
+      text-decoration: line-through;
+    }
+
+    .todoLists .list .task{
+      margin: 0 30px 0 15px;
+      word-break: break-all;
+    }
+    .content .pending-message{
+      color: #F9DBBB;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    .pending-message .clear-button{
+      padding: 6px 12px;
+      outline: none;
+      border: none;
+      background: #4E6E81;
+      color: #E4DCCF;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .clear-button:hover {
+      background-color: #a8dadc;
+      color: #003049;
     }
     main ul.poke-items li {
       margin: 10px 0px 10px 0px;
