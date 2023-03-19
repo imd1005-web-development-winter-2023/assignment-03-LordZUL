@@ -8,7 +8,9 @@
 //
 
 // Constants
-
+const btPopup = document.querySelector(".btnClick-popup");
+const wrapper = document.querySelector(".wrapper");
+const iconClose = document.querySelector(".ri-close-line");
 const inputField = document.querySelector("#task-name");
 const todoList = document.querySelector(".todoLists");
 const todoListForm = document.querySelector(".add-todoList");
@@ -32,6 +34,16 @@ function allTasks() {
   todoLists.style.marginTop = "0px";
   clearButton.style.pointerEvents = "none";
 }
+
+btPopup.addEventListener("click", ()=>{
+  wrapper.classList.add("active-popup");
+});
+
+iconClose.addEventListener("click", ()=>{
+  //console.log("hello");
+  wrapper.classList.remove("active-popup");
+});
+
 inputField.addEventListener("keyup",(e) =>{
   let inputVal = inputField.value.trim(); //removes white space 
   if ( e.key === "Enter" && inputVal.length > 0) {

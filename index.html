@@ -19,7 +19,8 @@
                 
 
     <!-- Set the Favicon  -->
-    <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
+    <link rel="icon" href="./images/favicon/Beer.png" type="image/png" />
+    
     
     <!--Icons of navigation bar-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -27,30 +28,19 @@
 
   </head>
   <body>
-    <!--
-
-      ADD YOUR ASSIGNMENT 03 CODE
-
-      YOU MAY REMOVE THE BOILERPLATE CODE BELOW
-
-      IMPORTANT CHECKLIST:
-
-      - Are users able to create and delete to do list items?
-      - Have you set a favicon? (included - but it's a rocket)
-      - Do you have a css reset file? (included)
-      - Has a team member conducted a code review and left a GitHub Issue in your repo?
-      - Have you conducted a code review and left a GitHub Issue on your team member's repo?
-
-    -->
+    <!--Reference to Mr. Neil's exercise 19 and 20, codingLabs tutorials, codeHal's tutorial, -->
     <main>
       <div class="container">
         <div class="click">
-          <button class="btnClick-popup">Click</button>
+          <button target="_blank" class="btnClick-popup" id="toggle1">Click</button>
         </div>
       </div>
       <div class="wrapper">
         <div class="content">
-          <div class="close-btn" onclick="togglePopup()">X</div>
+          <span class="icon-close">
+            <i class="ri-close-line"></i>
+          </span>
+          <!--<div class="close-btn" onclick="togglePopup()">X</div>-->
           <h1>Today's Bounty</h1>
           <form class="add-todoList">
             <!--<label for="task-name">Todo List:</label>-->

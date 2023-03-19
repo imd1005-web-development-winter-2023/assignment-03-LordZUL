@@ -61,12 +61,21 @@ body {
   gap: 0.5rem;
 }*/
   .btnClick-popup{
+    position: fixed;
     align-items: center;
-    width: 130px;
+    width: 120px;
+    height: 120px;
     background:transparent;
+    color: #f1faee;
     cursor: pointer;
-    z-index: 2;
+    font-size: 15px;
+    letter-spacing: 10px;
+    padding: 10px;
+    backdrop-filter: blur(20px);
+    border-radius: 100%;
+
   }
+
 .wrapper{
   display: flex;
   align-items: center;
@@ -77,7 +86,14 @@ body {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.3);
+  transform: scale(0);
+  
+  
+  
   /*transform: scale(0);*/
+}
+.wrapper.active-popup{
+  transform: scale(1);
 }
   .content{
     max-width: 800px;
@@ -85,10 +101,31 @@ body {
     margin: 20px 20px;
     /*margin: 85px auto 0;*/
     padding: 15px 75px;
-    border-radius: 35px;
+    border-radius: 20px;
     background-color: #2E3840;
     position: relative;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;    
+  }
+  .content .ri-close-line{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #4E6E81;
+    font-size: 2rem;
+    color: #E4DCCF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .ri-close-line:hover {
+    background-color: #a8dadc;
+    color: #003049;
   }
   .content .add-todoList{
     position: relative;
@@ -118,33 +155,10 @@ body {
       .add-todoList textarea:focus{
         border-color: #4E6E81;
       }
-      
-    /*input[type="text"] {
-      grid-column-start: 1;
-      grid-column-end: 3;
-  
-      border: none;
-      border-radius: 10px;
-      padding: 10px;
-  
-      box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-    }*/
-
-    /*input[type="submit"] {
-      background-color: #4E6E81;
-      border: none;
-      color: white;
-      font-weight: bold;
-      padding: 5px 5px;
-      text-decoration: none;
-      cursor: pointer;
-  
-      border-radius: 10px;
-      box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-    }*/
   
     main h1 {
       margin-bottom: 1.5rem;
+      margin-top: 1.2rem;
       font-size: 2rem;
       font-family:'Carnivalee Freakshow', sans-serif;
       color: #F9DBBB;
