@@ -30,7 +30,7 @@ body {
   font-family: sans-serif;
   background-color: #fdf0d5;
 
-  background: url("./images/peakpx.jpg") left no-repeat;
+  background: url("./images/catHub.jpg") left no-repeat;
   background-size: cover;
   min-height: 100vh;
   position: fixed;
@@ -166,6 +166,8 @@ body {
       text-transform: uppercase;
       letter-spacing: 12px;
       font-size: 4rem;
+      box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 1);
+      
     }
   
     .content .todoLists {
@@ -250,30 +252,6 @@ body {
       background-color: #a8dadc;
       color: #003049;
     }
-/*body {
-  color: #781D42;
-  font-family: sans-serif;
-  background-color: #fdf0d5;
-
-  background: url("./images/peakpx.jpg") left no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
-  /*font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
-}
-
-main {
-  min-height: 100vh;
-
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
-/*}
 
 /*
   Screen reader text utility class
