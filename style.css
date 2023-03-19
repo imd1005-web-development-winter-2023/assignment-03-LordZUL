@@ -145,7 +145,7 @@ body {
       height: 100%;
       width: 100%;
       outline: none;
-      font-size: 18px;
+      font-size: 100%;
       font-weight: 400;
       border-radius: 8px;
       padding: 18px 45px 18px 15px;
@@ -229,13 +229,21 @@ body {
       margin: 0 30px 0 15px;
       word-break: break-all;
     }
+
+    @media screen and (min-width: 472px) {
+      .content .pending-message {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
     .content .pending-message{
       color: #F9DBBB;
-      display: flex;
+      /*display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-between;*/
       margin-top: 25px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
     .pending-message .clear-button{
       padding: 6px 12px;
@@ -268,3 +276,4 @@ body {
   white-space: nowrap;
   border-width: 0;
 }
+
