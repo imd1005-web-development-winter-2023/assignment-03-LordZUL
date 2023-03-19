@@ -26,18 +26,241 @@
   PAGE / BODY
 */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
-}
-
-main {
+  color: #003049;
+  font-family: sans-serif;
+  background-color: #fdf0d5;
+  background: url("./images/catHub.jpg") left no-repeat;
+  background-size: cover;
   min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
 }
+  
+
+.container {
+  /*background-color: #8A1C24;*/
+  /*padding: 0px 2rem;*/
+
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100vw;
+  
+  
+}
+
+/*.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10,1fr);
+  gap: 0.5rem;
+}*/
+  .btnClick-popup{
+    position: fixed;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background:transparent;
+    color: #f1faee;
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 10px;
+    padding: 10px;
+    backdrop-filter: blur(20px);
+    border-radius: 100%;
+
+  }
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transform: scale(0);
+  
+  
+  
+  /*transform: scale(0);*/
+}
+.wrapper.active-popup{
+  transform: scale(1);
+}
+  .content{
+    
+    max-width: 100%;
+    height: 85vh;
+    margin: 20px 20px;
+    /*margin: 85px auto 0;*/
+    padding: 15px 75px;
+    border-radius: 20px;
+    background-color: #2E3840;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: scroll;    
+  }
+  .content .ri-close-line{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #4E6E81;
+    font-size: 2rem;
+    color: #E4DCCF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .ri-close-line:hover {
+    background-color: #a8dadc;
+    color: #003049;
+  }
+  .content .add-todoList{
+    position: relative;
+    height: 64px;
+    width: 100%;
+    margin-top: 20px;
+    
+  }
+  .add-todoList{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 30px;
+  }
+  
+    .add-todoList input[type="text"]{
+      height: 100%;
+      width: 100%;
+      outline: none;
+      font-size: 100%;
+      font-weight: 400;
+      border-radius: 8px;
+      padding: 18px 45px 18px 15px;
+      border: 1px solid #F9DBBB;
+      resize: none;
+      }
+      .add-todoList input[type="text"]:focus{
+        border-color: #4E6E81;
+      }
+  
+    main h1 {
+      margin-bottom: 2rem;
+      margin-top: 1.2rem;
+      font-size: 2rem;
+      font-family:'Carnivalee Freakshow', sans-serif;
+      color: #F9DBBB;
+      background-color: #2E3840;                                      
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      
+      font-size: 4vw;
+      box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 1);
+      
+    }
+  
+    .content .todoLists {
+      /*max-height: 200px;*/
+      max-height: 45%;
+      overflow-y: auto;
+      margin: 0px;
+      padding: 0px;
+      padding-right: 6px;
+    }
+    .todoLists .list{
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      background-color: #E4DCCF;
+      padding: 20px 15px;
+      border-radius: 8px;
+      position: relative;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    .todoLists .list:hover{
+      background-color: #b3aca1;
+    }
+    .todoLists .list i{
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #003049;
+      padding: 5px;
+      opacity: 0.6;
+      display: none;
+    }
+    .todoLists .list i:hover{
+      opacity: 1;
+    }
+    /*When you hover on the list, the i will display in this way...*/
+    .todoLists .list:hover i{
+      display: inline-flex;
+    }
+    /* What the-- turns out you need to put space before indicating children??? WHEN*/
+    .todoLists .list input{
+      height: 16px;
+      min-width: 16px;
+      accent-color: #003049;
+      pointer-events: none;
+      /*Pointer -events none basically makes the check box none*/
+    }
+
+    .list input:checked ~ .task {
+      text-decoration: line-through;
+    }
+
+    .todoLists .list .task{
+      margin: 0 30px 0 15px;
+      word-break: break-all;
+    }
+
+    @media screen and (min-width: 472px) {
+      .content .pending-message {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .content .pending-message{
+      color: #F9DBBB;
+      /*display: flex;
+      align-items: center;
+      justify-content: space-between;*/
+      margin-top: 25px;
+      margin-bottom: 5px;
+    }
+    .pending-message .clear-button{
+      padding: 6px 12px;
+      outline: none;
+      border: none;
+      background: #4E6E81;
+      color: #E4DCCF;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .clear-button:hover {
+      background-color: #a8dadc;
+      color: #003049;
+    }
 
 /*
   Screen reader text utility class
@@ -53,3 +276,4 @@ main {
   white-space: nowrap;
   border-width: 0;
 }
+
