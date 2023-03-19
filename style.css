@@ -188,6 +188,9 @@ body {
       cursor: pointer;
       margin-bottom: 15px;
     }
+    .todoLists .list:hover{
+      background-color: #b3aca1;
+    }
     .todoLists .list i{
       position: absolute;
       top: 50%;
