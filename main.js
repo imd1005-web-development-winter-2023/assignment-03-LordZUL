@@ -44,20 +44,38 @@ iconClose.addEventListener("click", ()=>{
   wrapper.classList.remove("active-popup");
 });
 
-inputField.addEventListener("keyup",(e) =>{
+
+function addTodo(e) {
+  // Stop browser default form submission
+  e.preventDefault();
+  let inputVal = inputField.value.trim(); //removes white space
+  let liTag = `<li class="list pending" onclick = "handleStatus(this)">
+          <input type="checkbox">
+          <span class="task">${inputVal}</span>
+          <i class="ri-delete-bin-5-line" onclick = "deleteTask(this)"></i>
+        </li>`;
+  const listItem = document.createElement("li");
+  listItem.textContent = liTag;
+  todoList.insertAdjacentHTML("beforeend", liTag);
+  todoListForm.reset();
+  allTasks();
+}
+todoListForm.addEventListener("submit", addTodo);
+/*inputField.addEventListener("keyup",(e) =>{
   let inputVal = inputField.value.trim(); //removes white space 
-  if ( e.key === "Enter" && inputVal.length > 0) {
-    let liTag = `<li class="list pending" onclick = "handleStatus(this)">
+  todoListForm.addEventListener("submit", addTodo);
+  if ( e.key === "submit" && inputVal.length > 0) {
+    
+    /*let liTag = `<li class="list pending" onclick = "handleStatus(this)">
           <input type="checkbox">
           <span class="task">${inputVal}</span>
           <i class="ri-delete-bin-5-line" onclick = "deleteTask(this)"></i>
         </li>`;
    todoList.insertAdjacentHTML("beforeend", liTag);
    todoListForm.reset();
-   allTasks();
+   allTasks();*/
 
-  }
-})
+  
 
 function handleStatus(e){
   const checkbox = e.querySelector("input");

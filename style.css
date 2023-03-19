@@ -141,7 +141,7 @@ body {
     margin-bottom: 30px;
   }
   
-    .add-todoList textarea{
+    .add-todoList input[type="text"]{
       height: 100%;
       width: 100%;
       outline: none;
@@ -152,7 +152,7 @@ body {
       border: 1px solid #F9DBBB;
       resize: none;
       }
-      .add-todoList textarea:focus{
+      .add-todoList input[type="text"]:focus{
         border-color: #4E6E81;
       }
   
